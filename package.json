@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "protractor JSFiles/protractor_conf.js",
+    "cucumber-test": "protractor JSFiles/protractor_cucumber_conf.js",
     "pretest": "tsc",
     "protractor": "./node_modules/protractor/built/cli.js",
     "webdriver-update": "./node_modules/.bin/webdriver-manager update"
@@ -27,6 +28,8 @@
     "@types/node": "12.12.17",
     "protractor-cucumber-framework": "^6.2.0",
     "cucumber": "^6.0.5",
-    "@types/cucumber": "4.0.4"
+    "@types/cucumber": "4.0.4",
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1"
   }
 }
