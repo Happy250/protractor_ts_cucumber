@@ -1,20 +1,28 @@
 import {browser, element, by } from 'protractor';
+import { calculator } from './pageobjects/calculator';
+import { angularHomePage } from './pageobjects/angularHomePage';
 
-describe('Protractor Element steps', function() {
-    it('Open Angular js Website', function(){
-        browser.get('http://juliemr.github.io/protractor-demo/');
-        element(by.model('first')).sendKeys('3');
-        element(by.model('second')).sendKeys('5');
-        element(by.id('gobutton')).click();
+describe('Protractor Element steps', () => {
+    it('Open Angular js Website',  async () => {
+        let calc = new calculator();
 
-        element(by.css('body > div > div > form > h2')).getText().then(function (text) {
+        await browser.get('http://juliemr.github.io/protractor-demo/');
+        await calc.firstEditbox.sendKeys('3');
+        await calc.secondEditbox.sendKeys('5');
+        await calc.go.click();
+
+        calc.getResult.getText().then(function (text) {
             console.log(text);
         });
 
-        expect(element(by.css('body > div > div > form > h2')).getText()).toBe('8');
+        expect(calc.getResult.getText()).toBe('8');
     })
 
-    // it ('close browser', function() {
-
-    // })
+    it ('Angular home page title validation', async () => {
+        let angularhp = new angularHomePage();
+        await browser.get("https://angularjs.org/");
+        await angularhp.angularLink.click();
+        await browser.sleep(3000);
+        await angularhp.searchBox.sendKeys('hello');
+    })
 })
