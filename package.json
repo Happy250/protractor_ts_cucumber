@@ -1,8 +1,12 @@
 {
   "name": "protractor_ts_cucumber",
   "version": "1.0.1",
-  "description": "",
+  "description": "Sample Architecture for Cucumber_Protractor_TypeScript Project",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Happy250/protractor_ts_cucumber.git"
+  },
   "scripts": {
     "test": "protractor JSFiles/protractor_conf.js",
     "cucumber-test": "protractor JSFiles/protractor_cucumber_conf.js",
@@ -30,6 +34,7 @@
     "cucumber": "^6.0.5",
     "@types/cucumber": "4.0.4",
     "chai": "4.2.0",
-    "chai-as-promised": "7.1.1"
+    "chai-as-promised": "7.1.1",
+    "cucumber-html-reporter": "^5.1.0"
   }
 }
